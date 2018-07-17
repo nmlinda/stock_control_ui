@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" onload="setDate(false)">
     <div class="wrapper">
 
         <header class="main-header">
@@ -163,19 +163,21 @@
                         <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>User</p>
+                        <p>User
+                            <br> HRD
+                        </p>
                     </div>
                 </div>
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active">
+                    <li class="">
                         <a href="user_home.html">
                             <i class="fa fa-dashboard"></i>
                             <span>Home</span>
                         </a>
                     </li>
-                    <li class="treeview">
+                    <li class="treeview active">
                         <a href="#">
                             <i class="fa fa-pie-chart"></i>
                             <span>Request</span>
@@ -184,7 +186,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li>
+                            <li class="active">
                                 <a href="user_request_create.html">
                                     <i class="fa fa-circle-o"></i> Create</a>
                             </li>
@@ -232,11 +234,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value=""> Set delivery date :
-                                                </label>
-                                            </div>
+                                            <input onclick="setDate()" type="checkbox" id="checkdate"> Set delivery date:
+                                            <input id="inputfield">
                                         </div>
                                         <div class="form-group">
                                             <label>Date:</label>
@@ -245,7 +244,7 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </div>
-                                                <input type="text" class="form-control pull-right" id="datepicker">
+                                                <input id="inputfield1" type="text" class="form-control pull-right" id="datepicker">
                                             </div>
                                         </div>
                                     </div>
@@ -253,27 +252,17 @@
                                 <!-- /.delivery date -->
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Choose item :</label>
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">Alabama</option>
-                                                <option>Alaska</option>
-
-                                            </select>
-                                        </div>
+                                        <label>Choose item :</label>
                                     </div>
                                     <div class="col-md-2">
-                                        <div class="form-group">
-                                            <label>Quantity</label>
-                                            <input type="number" class="form-control" value="" min="1">
-                                        </div>
+                                        <label>Quantity</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">Alabama</option>
+                                                <option selected="selected" disabled hidden>Select item..</option>
                                                 <option>Alaska</option>
 
                                             </select>
@@ -282,13 +271,15 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <input type="number" class="form-control" value="" min="1">
-
                                         </div>
                                     </div>
                                     <div class="col-md-2">
-                                        <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i></button>
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
                                     </div>
                                 </div>
+
                             </div>
                             <!-- /box-body -->
                             <!-- box-footer -->
@@ -334,6 +325,12 @@
         <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
         <!-- jQuery Knob Chart -->
         <script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+        <!-- Select2 -->
+<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/input-mask/jquery.inputmask.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
         <!-- daterangepicker -->
         <script src="bower_components/moment/min/moment.min.js"></script>
         <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
@@ -421,6 +418,16 @@
                     showInputs: false
                 })
             })
+        </script>
+        <script>
+           function setDate() {
+    
+    if(document.getElementById('checkdate').checked)
+     document.getElementById('inputfield').disabled=false;
+
+  	else
+     document.getElementById('inputfield').disabled=true;
+}
         </script>
 </body>
 
