@@ -153,78 +153,78 @@
     </header>
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-          <!-- Sidebar user panel -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="dist/img/user_default.jpg" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-              <p style="vertical-align: middle">Admin</p>
-            </div>
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="dist/img/user_default.jpg" class="img-circle" alt="User Image">
           </div>
-          <!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">Menu Utama</li>
-            <li>
-              <a href="ga_home.html">
-                <i class="fa fa-dashboard"></i>
-                <span>Beranda</span>
-              </a>
-  
-            </li>
-            <li class="active">
-              <a href="ga_request.html">
-                <i class="fa fa-files-o"></i>
-                <span>Permintaan</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-pie-chart"></i>
-                <span>Stock</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li>
-                  <a href="ga_stock_viewStock.html">
-                    <i class="fa fa-circle-o"></i> Stok</a>
-                </li>
-                <li>
-                  <a href="ga_procurement_list.html">
-                    <i class="fa fa-circle-o"></i> Procurement List</a>
-                </li>
-                <li>
-                  <a href="ga_stock_history.html">
-                    <i class="fa fa-circle-o"></i> Riwayat</a>
-                </li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>User</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li>
-                  <a href="ga_user_create.html">
-                    <i class="fa fa-circle-o"></i> Create</a>
-                </li>
-                <li>
-                  <a href="ga_user_data.html">
-                    <i class="fa fa-circle-o"></i> Data</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <!-- /.sidebar -->
+          <div class="pull-left info">
+            <p style="vertical-align: middle">Admin</p>
+          </div>
+        </div>
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header">Menu Utama</li>
+          <li>
+            <a href="ga_home.html">
+              <i class="fa fa-dashboard"></i>
+              <span>Beranda</span>
+            </a>
+
+          </li>
+          <li class="active">
+            <a href="ga_request.html">
+              <i class="fa fa-files-o"></i>
+              <span>Permintaan</span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-pie-chart"></i>
+              <span>Stock</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <a href="ga_stock_viewStock.html">
+                  <i class="fa fa-circle-o"></i> Stok</a>
+              </li>
+              <li>
+                <a href="ga_procurement_list.html">
+                  <i class="fa fa-circle-o"></i> Procurement List</a>
+              </li>
+              <li>
+                <a href="ga_stock_history.html">
+                  <i class="fa fa-circle-o"></i> Riwayat</a>
+              </li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-laptop"></i>
+              <span>User</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <a href="ga_user_create.html">
+                  <i class="fa fa-circle-o"></i> Create</a>
+              </li>
+              <li>
+                <a href="ga_user_data.html">
+                  <i class="fa fa-circle-o"></i> Data</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
@@ -250,47 +250,148 @@
           <div class="col-md-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Request List</h3>
+                <h3 class="box-title">Daftar Permintaan</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                <table id="data_request" class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>User Name</th>
-                      <th>Departement</th>
-                      <th>Open Request Time</th>
-                      <th>Status</th>
-                      <th>Detail</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Noer Widya Herlambang</td>
-                      <td>General Affair</td>
-                      <td>7 Jul 2018 13:40</td>
-                      <td>
-                        <h1 class="label bg-yellow">Open</h1>
-                      </td>
-                      <td>
-                        <button type="button" class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#request">Detail</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>No</th>
-                      <th>User Name</th>
-                      <th>Departement</th>
-                      <th>Open Request Time</th>
-                      <th>Status</th>
-                      <th>Detail</th>
-                    </tr>
-                  </tfoot>
-                </table>
+                <div class="nav-tabs-custom">
+                  <ul class="nav nav-tabs">
+                    <li class="active">
+                      <a href="#open" data-toggle="tab">Open</a>
+                    </li>
+                    <li>
+                      <a href="#ready" data-toggle="tab">Ready</a>
+                    </li>
+                    <li>
+                      <a href="#close" data-toggle="tab">Close</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="active tab-pane" id="open">
+                      <table id="openTable" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>User Name</th>
+                            <th>Departement</th>
+                            <th>Open Request Time</th>
+                            <th>Status</th>
+                            <th>Detail</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Noer Widya Herlambang</td>
+                            <td>General Affair</td>
+                            <td>7 Jul 2018 13:40</td>
+                            <td>
+                              <h1 class="label bg-yellow">Open</h1>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#request">Detail</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>No</th>
+                            <th>User Name</th>
+                            <th>Departement</th>
+                            <th>Open Request Time</th>
+                            <th>Status</th>
+                            <th>Detail</th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                    <!-- /.tab-pane -->
+
+                    <div class="tab-pane" id="ready">
+                        <table id="readyTable" class="table table-bordered table-striped">
+                          <thead>
+                            <tr>
+                              <th>No</th>
+                              <th>User Name</th>
+                              <th>Departement</th>
+                              <th>Open Request Time</th>
+                              <th>Status</th>
+                              <th>Detail</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Noer Widya Herlambang</td>
+                              <td>General Affair</td>
+                              <td>7 Jul 2018 13:40</td>
+                              <td>
+                                <h1 class="label bg-green">Ready</h1>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#request">Detail</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <th>No</th>
+                              <th>User Name</th>
+                              <th>Departement</th>
+                              <th>Open Request Time</th>
+                              <th>Status</th>
+                              <th>Detail</th>
+                            </tr>
+                          </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+
+                    <div class="tab-pane" id="close">
+                        <table id="closeTable" class="table table-bordered table-striped">
+                          <thead>
+                            <tr>
+                              <th>No</th>
+                              <th>User Name</th>
+                              <th>Departement</th>
+                              <th>Open Request Time</th>
+                              <th>Status</th>
+                              <th>Detail</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Noer Widya Herlambang</td>
+                              <td>General Affair</td>
+                              <td>7 Jul 2018 13:40</td>
+                              <td>
+                                <h1 class="label bg-gray">Close</h1>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#request">Detail</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <th>No</th>
+                              <th>User Name</th>
+                              <th>Departement</th>
+                              <th>Open Request Time</th>
+                              <th>Status</th>
+                              <th>Detail</th>
+                            </tr>
+                          </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                  </div>
+                  <!-- /.tab-content -->
+                </div>
               </div>
+              <!-- /.box-body -->
+              <!-- /.Modal -->
               <div class="modal fade" id="request">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -340,7 +441,7 @@
                 </div>
                 <!-- /.modal-dialog -->
               </div>
-              <!-- /.box-body -->
+              <!-- /.Modal -->
             </div>
           </div>
         </div>
@@ -402,7 +503,9 @@
     <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <script>
       $(function () {
-        $('#data_request').DataTable()
+        $('#openTable').DataTable()
+        $('#readyTable').DataTable()
+        $('#closeTable').DataTable()
         $('#example2').DataTable({
           'paging': true,
           'lengthChange': false,
