@@ -28,9 +28,8 @@
   <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
+  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -40,22 +39,6 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <style>
-    .example-modal .modal {
-      position: relative;
-      top: auto;
-      bottom: auto;
-      right: auto;
-      left: auto;
-      display: block;
-      z-index: 1;
-    }
-
-    .example-modal .modal {
-      background: transparent !important;
-    }
-  </style>
-
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -206,11 +189,11 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li class="active">
+              <li>
                 <a href="ga_stock_viewStock.html">
                   <i class="fa fa-circle-o"></i> Stok</a>
               </li>
-              <li>
+              <li class="active">
                 <a href="ga_procurement_list.html">
                   <i class="fa fa-circle-o"></i> Procurement List</a>
               </li>
@@ -263,130 +246,50 @@
 
       <!-- Main content -->
       <section class="content">
-        <!-- /.row -->
-        <!-- Main row -->
         <div class="row">
           <div class="col-md-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Update Stok</h3>
+                <h3 class="box-title">Procurement Item List</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                <table id="procurementList" class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Nama</th>
-                      <th>Stok</th>
-                      <th>Stok Minimal</th>
-                      <th>Kategori</th>
-                      <th>Update Stok</th>
-                    </tr>
-                  </thead>
+                <form action="#">
+                  <div class="form-group">
+                    <label>Item Name</label>
+                    <input type="text" class="form-control" placeholder="Item Name" name="name" id="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="text" class="form-control" placeholder="Quantity" name="quantity" id="quantity" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Unit</label>
+                    <input type="text" class="form-control" placeholder="Unit" name="unit" id="unit" required>
+                  </div>
+                  <button class="btn btn-block btn-primary btn-flat" type="button" onclick="addProcurementList()">Tambahkan</button>
+                </form>
+                <hr>
+                <table class="table table-striped" id="procurementTable">
                   <tbody>
                     <tr>
-                      <td>1</td>
-                      <td>Kertas</td>
-                      <td>5 rim</td>
-                      <td>1 rim</td>
-                      <td>ATK</td>
-                      <td>
-                        <button type="button" class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#modal-default">Update</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Galon</td>
-                      <td>6 pcs</td>
-                      <td>2 pcs</td>
-                      <td>Konsumsi</td>
-                      <td>
-                        <button type="button" class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#modal-default">Update</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Spidol</td>
-                      <td>15 pcs</td>
-                      <td>3 pcs</td>
-                      <td>ATK</td>
-                      <td>
-                        <button type="button" class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#modal-default">Update</button>
-                      </td>
+                      <th style="width: 50px">#</th>
+                      <th>Item Name</th>
+                      <th>Quantity</th>
+                      <th style="width: 120px">Delete</th>
                     </tr>
                   </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>Id</th>
-                      <th>Nama</th>
-                      <th>Stok</th>
-                      <th>Stok Minimal</th>
-                      <th>Kategori</th>
-                      <th>Update Stok</th>
-                    </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- /.box-body -->
             </div>
-            <!-- /.box -->
           </div>
         </div>
-        <!-- /.row (main row) -->
-
-        <!-- modal detail -->
-        <div class="modal fade" id="modal-default">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">Update Stok Barang</h4>
-              </div>
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col-xs-12 table-responsive">
-                    <form role="form">
-                      <div class="form-group">
-                        <label>Nama Item</label>
-                        <input type="text" class="form-control" placeholder="Kertas" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label>Jumlah Stok</label>
-                        <input type="text" class="form-control" placeholder="5">
-                      </div>
-                      <div class="form-group">
-                        <label>Minimal Stock</label>
-                        <input type="text" class="form-control" placeholder="2">
-                      </div>
-                      <div class="form-group">
-                        <label>Kategori</label>
-                        <input type="text" class="form-control" placeholder="ATK" disabled>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- /.col -->
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
-        <!-- /.modal detail -->
 
       </section>
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
     <footer class="main-footer">
       <div class="pull-right hidden-xs">
         <b>Version</b> 2.4.0
@@ -400,24 +303,69 @@
 
     <!-- jQuery 3 -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
     <!-- Bootstrap 3.3.7 -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- DataTables -->
-    <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <!-- SlimScroll -->
+    <!-- Morris.js charts -->
+    <script src="bower_components/raphael/raphael.min.js"></script>
+    <script src="bower_components/morris.js/morris.min.js"></script>
+    <!-- Sparkline -->
+    <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- jvectormap -->
+    <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- Slimscroll -->
     <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
-    <!-- page script -->
+
+    <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <script>
       $(function () {
-        $('#procurementList').DataTable()
+        $('#data_request').DataTable()
       })
+    </script>
+    <script>
+      function addProcurementList() {
+        var table = document.getElementById("procurementTable");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = document.getElementById("procurementTable").rows.length - 1;
+        cell2.innerHTML = document.getElementById("name").value;
+        cell3.innerHTML = document.getElementById("quantity").value;
+        cell4.innerHTML = '<button type="button" class="btn btn-danger" onclick="deleteRow(this)">Delete</button>';
+        document.getElementById("name").value = "";
+        document.getElementById("quantity").value = "";
+        document.getElementById("unit").value = "";
+      }
+      function deleteRow(btn) {
+        var row = btn.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      }
     </script>
 </body>
 
