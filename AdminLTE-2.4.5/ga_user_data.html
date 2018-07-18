@@ -161,55 +161,59 @@
         <!-- Left side column. contains the logo and sidebar -->
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
-                <!-- sidebar: style can be found in sidebar.less -->
-                <section class="sidebar">
-                  <!-- Sidebar user panel -->
-                  <div class="user-panel">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
                     <div class="pull-left image">
-                      <img src="dist/img/user_default.jpg" class="img-circle" alt="User Image">
+                        <img src="dist/img/user_default.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                      <p style="vertical-align: middle">Admin</p>
+                        <p style="vertical-align: middle">Admin</p>
                     </div>
-                  </div>
-                  <!-- sidebar menu: : style can be found in sidebar.less -->
-                  <ul class="sidebar-menu" data-widget="tree">
+                </div>
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">Menu Utama</li>
                     <li>
-                      <a href="ga_home.html">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Beranda</span>
-                      </a>
-          
+                        <a href="ga_home.html">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Beranda</span>
+                        </a>
+
                     </li>
                     <li>
-                      <a href="ga_request.html">
-                        <i class="fa fa-files-o"></i>
-                        <span>Permintaan</span>
-                      </a>
+                        <a href="ga_request.html">
+                            <i class="fa fa-files-o"></i>
+                            <span>Permintaan</span>
+                        </a>
                     </li>
                     <li class="treeview">
-                      <a href="#">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>Inventory</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
-                      <ul class="treeview-menu">
-                        <li>
-                          <a href="ga_stock_viewStock.html">
-                            <i class="fa fa-circle-o"></i>Sunting Inventory</a>
-                        </li>
-                        <li>
-                          <a href="ga_procurement_list.html">
-                            <i class="fa fa-circle-o"></i> Procurement List</a>
-                        </li>
-                        <li>
-                          <a href="ga_stock_history.html">
-                            <i class="fa fa-circle-o"></i> Riwayat</a>
-                        </li>
-                      </ul>
+                        <a href="#">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Inventory</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="ga_stock_entry.html">
+                                    <i class="fa fa-circle-o"></i>Entry Data Inventory</a>
+                            </li>
+                            <li>
+                                <a href="ga_stock_viewStock.html">
+                                    <i class="fa fa-circle-o"></i>Sunting Inventory</a>
+                            </li>
+                            <li>
+                                <a href="ga_procurement_list.html">
+                                    <i class="fa fa-circle-o"></i> Procurement List</a>
+                            </li>
+                            <li>
+                                <a href="ga_stock_history.html">
+                                    <i class="fa fa-circle-o"></i> Riwayat</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="treeview active">
                         <a href="#">
@@ -230,10 +234,29 @@
                             </li>
                         </ul>
                     </li>
-                  </ul>
-                </section>
-                <!-- /.sidebar -->
-              </aside>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-bar-chart"></i>
+                            <span>Report</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="ga_report_inventory.html">
+                                    <i class="fa fa-circle-o"></i> Report Inventories</a>
+                            </li>
+                            <li>
+                                <a href="ga_report_entry.html">
+                                    <i class="fa fa-circle-o"></i> Report Entry</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -283,7 +306,9 @@
                                             <td>adamfir</td>
                                             <td>Adam@mail.com</td>
                                             <td>Support</td>
-                                            <td><span class="label label-success">Active</span></td>
+                                            <td>
+                                                <span class="label label-success">Active</span>
+                                            </td>
                                             <td>
                                                 <button class="edit-modal btn btn-info" data-toggle="modal" data-target="#modal-default">
                                                     <span class="glyphicon glyphicon-edit"></span> Edit
@@ -296,7 +321,9 @@
                                             <td>noer21</td>
                                             <td>Noer@mail.com</td>
                                             <td>HRD</td>
-                                            <td><span class="label label-success">Active</span></td>
+                                            <td>
+                                                <span class="label label-success">Active</span>
+                                            </td>
                                             <td>
                                                 <button class="edit-modal btn btn-info" data-toggle="modal" data-target="#modal-default">
                                                     <span class="glyphicon glyphicon-edit"></span> Edit
@@ -309,7 +336,9 @@
                                             <td>vitori</td>
                                             <td>vito@mail.com</td>
                                             <td>HRD</td>
-                                            <td><span class="label label-success">Active</span></td>
+                                            <td>
+                                                <span class="label label-success">Active</span>
+                                            </td>
                                             <td>
                                                 <button class="edit-modal btn btn-info" data-toggle="modal" data-target="#modal-default">
                                                     <span class="glyphicon glyphicon-edit"></span> Edit
@@ -322,7 +351,9 @@
                                             <td>nuhsat</td>
                                             <td>nuh@mail.com</td>
                                             <td>support</td>
-                                            <td><span class="label label-success">Active</span></td>
+                                            <td>
+                                                <span class="label label-success">Active</span>
+                                            </td>
                                             <td>
                                                 <button class="edit-modal btn btn-info" data-toggle="modal" data-target="#modal-default">
                                                     <span class="glyphicon glyphicon-edit"></span> Edit

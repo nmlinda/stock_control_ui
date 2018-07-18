@@ -190,6 +190,10 @@
             </a>
             <ul class="treeview-menu">
               <li>
+                <a href="ga_stock_entry.html">
+                  <i class="fa fa-circle-o"></i>Entry Data Inventory</a>
+              </li>
+              <li>
                 <a href="ga_stock_viewStock.html">
                   <i class="fa fa-circle-o"></i>Sunting Inventory</a>
               </li>
@@ -219,6 +223,25 @@
               <li>
                 <a href="ga_user_data.html">
                   <i class="fa fa-circle-o"></i> Data</a>
+              </li>
+            </ul>
+          </li>
+          <li class="treeview active">
+            <a href="#">
+              <i class="fa fa-bar-chart"></i>
+              <span>Report</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li class="active">
+                <a href="ga_report_inventory.html">
+                  <i class="fa fa-circle-o"></i> Report Inventories</a>
+              </li>
+              <li>
+                <a href="ga_report_entry.html">
+                  <i class="fa fa-circle-o"></i> Report Entry</a>
               </li>
             </ul>
           </li>
@@ -297,19 +320,20 @@
                   </tbody>
                   <tfoot>
                     <tr>
-                        <th>No</th>
-                        <th>Nama Barang</th>
-                        <th>Kategori</th>
-                        <th>Stok</th>
-                        <th>Stok Minimal</th>
-                        <th>Satuan</th>
-                        <th>Terakhir di Sunting</th>
+                      <th>No</th>
+                      <th>Nama Barang</th>
+                      <th>Kategori</th>
+                      <th>Stok</th>
+                      <th>Stok Minimal</th>
+                      <th>Satuan</th>
+                      <th>Terakhir di Sunting</th>
                     </tr>
                   </tfoot>
                 </table>
                 <td>
-                    <button type="button" class="btn btn-block btn-primary btn" data-toggle="modal" data-target="#modal-default"><i class="fa fa-download"></i> Unduh Riwayat</button>
-                  </td>
+                  <button type="button" class="btn btn-block btn-primary btn" data-toggle="modal" data-target="#modal-default">
+                    <i class="fa fa-download"></i> Unduh Riwayat</button>
+                </td>
               </div>
               <!-- /.box-body -->
             </div>
@@ -381,15 +405,15 @@
         $('#procurementList').DataTable()
       })
       function addProcurementList() {
-        if(document.getElementById("name").value === "" || document.getElementById("quantity").value === "" || document.getElementById("unit").value === ""){
-          if(document.getElementById("name").value == "")
+        if (document.getElementById("name").value === "" || document.getElementById("quantity").value === "" || document.getElementById("unit").value === "") {
+          if (document.getElementById("name").value == "")
             document.getElementById("nameWarning").innerText = "Silahkan pilih barang terlebih dahulu."
-          if(document.getElementById("quantity").value == "")
+          if (document.getElementById("quantity").value == "")
             document.getElementById("quantityWarning").innerText = "Silahkan isi jumlah barang."
-          if(document.getElementById("unit").value == "")
+          if (document.getElementById("unit").value == "")
             document.getElementById("unitWarning").innerText = "Silahkan pilih jenis satuan."
         }
-        else{
+        else {
           var table = document.getElementById("procurementTable");
           var row = table.insertRow(-1);
           var cell1 = row.insertCell(0);
