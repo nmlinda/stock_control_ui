@@ -339,7 +339,7 @@
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
-                                                <h4 class="modal-title">Default Modal</h4>
+                                                <h4 class="modal-title">Edit user</h4>
                                             </div>
                                             <div class="modal-body">
                                                 <form class="form-horizontal" action="CRUD/proses_editberita.php" name="modal-popup" enctype="multipart/form-data" method="POST"
@@ -359,6 +359,13 @@
                                                     </div>
 
                                                     <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Username</label>
+                                                        <div class="col-lg-5">
+                                                            <input style="width: 210px;" class="form-control" type="text" name="id_berita" value="adamfir" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
                                                         <label class="col-lg-3 control-label">Email User</label>
                                                         <div class="col-lg-5">
                                                             <input style="width: 210px;" class="form-control" type="text" name="id_berita" value="Adam@mail.com" />
@@ -374,6 +381,16 @@
                                                                 <option>HRD</option>
                                                                 <option>Finance</option>
                                                                 <option>Marketing</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-lg-3 control-label">Status</label>
+                                                        <div class="col-lg-5">
+                                                            <select name="status" id="status" style="width: 210px;" class="form-control">
+                                                                <option value="" selected>Active</option>
+                                                                <option value="">Non-Active</option>
                                                             </select>
                                                         </div>
                                                     </div>
