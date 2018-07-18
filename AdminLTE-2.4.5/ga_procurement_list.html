@@ -250,47 +250,51 @@
           <div class="col-md-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Daftar Barang Pengadaan</h3>
+                <h3 class="box-title">Procurement List</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                <form action="#">
-                  <div class="form-group">
-                    <label>Nama Barang</label>
-                    <select class="form-control" name="name" id="name" placeholder="Nama Barang">
-                      <option value="" disabled selected>Pilih Barang</option>
-                      <option value="buku">Buku</option>
-                      <option value="pulpen">Pulpen</option>
-                    </select>
-                    <span id="nameWarning"></span>
-                  </div>
-                  <div class="form-group">
-                    <label>Jumlah</label>
-                    <input type="number" class="form-control" placeholder="0" name="quantity" id="quantity" required>
-                    <span id="quantityWarning"></span>
-                  </div>
-                  <div class="form-group">
-                    <label>Satuan</label>
-                    <select class="form-control" placeholder="Satuan" name="unit" id="unit" required>
-                      <option value="" disabled selected>Pilih Satuan</option>
-                      <option value="buku">Pcs</option>
-                      <option value="pulpen">Lusin</option>
-                    </select>
-                    <span id="unitWarning"></span>
-                  </div>
-                  <button class="btn btn-block btn-primary btn-flat" type="button" onclick="addProcurementList()">Tambahkan</button>
-                </form>
-                <hr>
-                <table class="table table-striped" id="procurementTable">
+                <table id="procurementList" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Nama</th>
+                      <th>Stok</th>
+                      <th>Stok Minimal</th>
+                    </tr>
+                  </thead>
                   <tbody>
                     <tr>
-                      <th style="width: 50px">#</th>
-                      <th>Item Name</th>
-                      <th>Quantity</th>
-                      <th style="width: 120px">Delete</th>
+                      <td>1</td>
+                      <td>Kertas</td>
+                      <td>0 rim</td>
+                      <td>1 rim</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Galon</td>
+                      <td>1 pcs</td>
+                      <td>2 pcs</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Spidol</td>
+                      <td>2 pcs</td>
+                      <td>3 pcs</td>
                     </tr>
                   </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>Id</th>
+                      <th>Nama</th>
+                      <th>Stok</th>
+                      <th>Stok Minimal</th>
+                    </tr>
+                  </tfoot>
                 </table>
+                <td>
+                    <button type="button" class="btn btn-block btn-primary btn" data-toggle="modal" data-target="#modal-default"><i class="fa fa-download"></i> Unduh Riwayat</button>
+                  </td>
               </div>
               <!-- /.box-body -->
             </div>
@@ -358,6 +362,9 @@
       })
     </script>
     <script>
+      $(function () {
+        $('#procurementList').DataTable()
+      })
       function addProcurementList() {
         if(document.getElementById("name").value === "" || document.getElementById("quantity").value === "" || document.getElementById("unit").value === ""){
           if(document.getElementById("name").value == "")
