@@ -298,9 +298,9 @@
                     <li>
                       <a href="#close" data-toggle="tab">Close</a>
                     </li>
-                    <li>
+                    <!-- <li>
                       <a href="#special" data-toggle="tab">Special</a>
-                    </li>
+                    </li> -->
                   </ul>
                   <div class="tab-content">
                     <div class="active tab-pane" id="open">
@@ -427,11 +427,11 @@
                       <table id="specialTable" class="table table-bordered table-striped">
                         <thead>
                           <tr>
-                            <th>No</th>
+                            <th>Id</th>
                             <th>User Name</th>
                             <th>Departement</th>
                             <th>Open Request Time</th>
-                            <th>Status</th>
+                            <th>Inventory Name</th>
                             <th>Detail</th>
                           </tr>
                         </thead>
@@ -441,11 +441,9 @@
                             <td>Noer Widya Herlambang</td>
                             <td>General Affair</td>
                             <td>7 Jul 2018 13:40</td>
+                            <td>Gitar</td>
                             <td>
-                              <h1 class="label bg-gray">Close</h1>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#request_2">Detail</button>
+                              <button type="button" class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#request_special">Detail</button>
                             </td>
                           </tr>
                         </tbody>
@@ -521,6 +519,56 @@
               <!-- /.Modal -->
               <!-- /.Modal -->
               <div class="modal fade" id="request_2">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4 class="modal-title">Detail Request</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label>User Name</label>
+                        <input type="text" class="form-control" value="Noer Widya Herlambang" name="code" disabled="">
+                      </div>
+                      <div class="form-group">
+                        <label>Departement</label>
+                        <input type="text" class="form-control" value="General Affair" name="code" disabled="">
+                      </div>
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Pulpen</td>
+                            <td>5</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Buku</td>
+                            <td>5</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                  <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+              </div>
+              <!-- /.Modal -->
+              <!-- /.Modal -->
+              <div class="modal fade" id="request_special">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
