@@ -299,6 +299,9 @@
                     <li>
                       <a href="#close" data-toggle="tab">Close</a>
                     </li>
+                    <li>
+                      <a href="#special" data-toggle="tab">Special</a>
+                    </li>
                   </ul>
                   <div class="tab-content">
                     <div class="active tab-pane" id="open">
@@ -420,6 +423,47 @@
                       </table>
                     </div>
                     <!-- /.tab-pane -->
+
+                    <div class="tab-pane" id="special">
+                      <table id="specialTable" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>User Name</th>
+                            <th>Departement</th>
+                            <th>Open Request Time</th>
+                            <th>Status</th>
+                            <th>Detail</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Noer Widya Herlambang</td>
+                            <td>General Affair</td>
+                            <td>7 Jul 2018 13:40</td>
+                            <td>
+                              <h1 class="label bg-gray">Close</h1>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#request_2">Detail</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>No</th>
+                            <th>User Name</th>
+                            <th>Departement</th>
+                            <th>Open Request Time</th>
+                            <th>Status</th>
+                            <th>Detail</th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                    <!-- /.tab-pane -->
+
                   </div>
                   <!-- /.tab-content -->
                 </div>
@@ -590,6 +634,7 @@
         $('#openTable').DataTable()
         $('#readyTable').DataTable()
         $('#closeTable').DataTable()
+        $('#specialTable').DataTable()
         $('#example2').DataTable({
           'paging': true,
           'lengthChange': false,
