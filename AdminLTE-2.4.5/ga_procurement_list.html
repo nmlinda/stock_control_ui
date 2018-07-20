@@ -266,15 +266,14 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Dashboard
-          <small>Control panel</small>
+          Procurement List
         </h1>
         <ol class="breadcrumb">
           <li>
             <a href="#">
-              <i class="fa fa-dashboard"></i> Home</a>
+              <i class="fa fa-dashboard"></i> Procurement</a>
           </li>
-          <li class="active">Dashboard</li>
+          <li class="active">Procurement List</li>
         </ol>
       </section>
 
@@ -283,54 +282,113 @@
         <div class="row">
           <div class="col-md-12">
             <div class="box">
-              <div class="box-header">
-                <h3 class="box-title">Procurement List</h3>
-              </div>
-              <!-- /.box-header -->
+              <!-- .box-body -->
               <div class="box-body">
-                <table id="procurementList" class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Nama</th>
-                      <th>Stok</th>
-                      <th>Stok Minimal</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Kertas</td>
-                      <td>0 rim</td>
-                      <td>1 rim</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Galon</td>
-                      <td>1 pcs</td>
-                      <td>2 pcs</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Spidol</td>
-                      <td>2 pcs</td>
-                      <td>3 pcs</td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>Id</th>
-                      <th>Nama</th>
-                      <th>Stok</th>
-                      <th>Stok Minimal</th>
-                    </tr>
-                  </tfoot>
-                </table>
-                <td>
-                    <button type="button" class="btn btn-block btn-primary btn" data-toggle="modal" data-target="#modal-default"><i class="fa fa-download"></i> Unduh Riwayat</button>
-                  </td>
+                <div class="nav-tabs-custom">
+                  <ul class="nav nav-tabs">
+                    <li class="active">
+                      <a href="#Procurement" data-toggle="tab">Procurement</a>
+                    </li>
+                    <li>
+                      <a href="#Pantry" data-toggle="tab">Pantry</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="active tab-pane" id="Procurement">
+                      <table id="procurementList" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>Nama</th>
+                            <th>Stok</th>
+                            <th>Stok Minimal</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Kertas</td>
+                            <td>0 rim</td>
+                            <td>1 rim</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Galon</td>
+                            <td>1 pcs</td>
+                            <td>2 pcs</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>Spidol</td>
+                            <td>2 pcs</td>
+                            <td>3 pcs</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>Id</th>
+                            <th>Nama</th>
+                            <th>Stok</th>
+                            <th>Stok Minimal</th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                      <td>
+                          <button type="button" class="btn btn-block btn-primary btn" data-toggle="modal" data-target="#modal-default"><i class="fa fa-download"></i> Unduh Riwayat</button>
+                        </td>
+                    </div>
+                    <!-- /.tab-pane -->
+
+                    <div class="tab-pane" id="pantry">
+                      <table id="pantryList" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>Nama</th>
+                            <th>Stok</th>
+                            <th>Stok Minimal</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Kertas</td>
+                            <td>0 rim</td>
+                            <td>1 rim</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Galon</td>
+                            <td>1 pcs</td>
+                            <td>2 pcs</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>Spidol</td>
+                            <td>2 pcs</td>
+                            <td>3 pcs</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>Id</th>
+                            <th>Nama</th>
+                            <th>Stok</th>
+                            <th>Stok Minimal</th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                      <td>
+                          <button type="button" class="btn btn-block btn-primary btn" data-toggle="modal" data-target="#modal-default"><i class="fa fa-download"></i> Unduh Riwayat</button>
+                        </td>
+                    </div>
+                    <!-- /.tab-pane -->
+                  </div>
+                  <!-- /.tab-content -->
+                </div>
               </div>
               <!-- /.box-body -->
+              
             </div>
           </div>
         </div>
@@ -392,12 +450,8 @@
     <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <script>
       $(function () {
-        $('#data_request').DataTable()
-      })
-    </script>
-    <script>
-      $(function () {
         $('#procurementList').DataTable()
+        $('#pantryList').DataTable()
       })
       function addProcurementList() {
         if(document.getElementById("name").value === "" || document.getElementById("quantity").value === "" || document.getElementById("unit").value === ""){
