@@ -103,7 +103,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="active">
+                            <li>
                                 <a href="user_request_create.html">
                                     <i class="fa fa-circle-o"></i> Create</a>
                             </li>
@@ -111,7 +111,7 @@
                                 <a href="user_request_history.html">
                                     <i class="fa fa-circle-o"></i> History</a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="user_request_special.html">
                                     <i class="fa fa-circle-o"></i> Special Request</a>
                             </li>
@@ -151,70 +151,31 @@
                         <div class="box">
                             <div class="box-header">
                                 <h3 class="box-title">
-                                    Create Request
+                                    Create Special Request
                                 </h3>
                             </div>
                             <!-- box-body -->
                             <div class="box-body">
-
                                 <!-- delivery date -->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input onclick="setDate()" type="checkbox" id="checkdate"> Set delivery date:
-                                            <div class="input-group date">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-calendar"></i>
-                                                </div>
-                                                <input type="text" class="form-control pull-right" id="datepicker">
+                                            <div class="form-group">
+                                                <label>Nama Barang</label>
+                                                <input type="text" class="form-control" placeholder="Nama Barang ...">
                                             </div>
-                                            <!-- /.input group -->
+                                            <div class="form-group">
+                                                <label>Jumlah</label>
+                                                <input type="text" class="form-control" placeholder="Jumlah barang ...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Keterangan</label>
+                                                <textarea class="form-control" rows="3" placeholder="Saya membutuhkan barang itu untuk ..."></textarea>
+                                            </div>
                                         </div>
                                         <!-- /.form group -->
                                     </div>
                                 </div>
-                                <!-- /.delivery date -->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Pilih item :</label>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <label>Kuantitas</label>
-                                    </div>
-                                </div>
-                                <form action="#">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <select class="form-control select2" name="name" id="name" required style="width: 100%;">
-                                                    <option value="" selected="selected" hidden>Pilih item..</option>
-                                                    <option value="Alaska">Alaska</option>
-                                                    <option value="Pensil">Pensil</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <input type="number" class="form-control" required name="quantity" id="quantity" value="" min="1">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <button type="button" class="btn btn-success" required onclick="addRequestList()">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <table class="table table-striped" id="requestTable">
-                                    <tbody>
-                                        <tr>
-                                            <th style="width: 50px">#</th>
-                                            <th>Item Name</th>
-                                            <th>Quantity</th>
-                                            <th style="width: 120px">Action</th>
-                                        </tr>
-                                    </tbody>
-                                </table>
                             </div>
                             <!-- /box-body -->
                             <!-- box-footer -->
@@ -271,101 +232,7 @@
         <script src="dist/js/demo.js"></script>
         <!-- Page script -->
         <script>
-            $(function () {
-                //Initialize Select2 Elements
-                $('.select2').select2()
 
-                //Datemask dd/mm/yyyy
-                $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-                //Datemask2 mm/dd/yyyy
-                $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-                //Money Euro
-                $('[data-mask]').inputmask()
-
-                //Date range picker
-                $('#reservation').daterangepicker()
-                //Date range picker with time picker
-                $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
-                //Date range as a button
-                $('#daterange-btn').daterangepicker(
-                    {
-                        ranges: {
-                            'Today': [moment(), moment()],
-                            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                            'This Month': [moment().startOf('month'), moment().endOf('month')],
-                            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                        },
-                        startDate: moment().subtract(29, 'days'),
-                        endDate: moment()
-                    },
-                    function (start, end) {
-                        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-                    }
-                )
-
-                //Date picker
-                $('#datepicker').datepicker({
-                    autoclose: true
-                })
-
-                //iCheck for checkbox and radio inputs
-                $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-                    checkboxClass: 'icheckbox_minimal-blue',
-                    radioClass: 'iradio_minimal-blue'
-                })
-                //Red color scheme for iCheck
-                $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-                    checkboxClass: 'icheckbox_minimal-red',
-                    radioClass: 'iradio_minimal-red'
-                })
-                //Flat red color scheme for iCheck
-                $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-                    checkboxClass: 'icheckbox_flat-green',
-                    radioClass: 'iradio_flat-green'
-                })
-
-                //Colorpicker
-                $('.my-colorpicker1').colorpicker()
-                //color picker with addon
-                $('.my-colorpicker2').colorpicker()
-
-                //Timepicker
-                $('.timepicker').timepicker({
-                    showInputs: false
-                })
-            })
-        </script>
-        <script>
-            function setDate() {
-
-                if (document.getElementById('checkdate').checked)
-                    document.getElementById('datepicker').disabled = false;
-
-                else
-                    document.getElementById('datepicker').disabled = true;
-            }
-        </script>
-        <script>
-            function addRequestList() {
-                var table = document.getElementById("requestTable");
-                var row = table.insertRow(-1);
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                var cell4 = row.insertCell(3);
-                cell1.innerHTML = document.getElementById("requestTable").rows.length - 1;
-                cell2.innerHTML = document.getElementById("name").value;
-                cell3.innerHTML = document.getElementById("quantity").value;
-                cell4.innerHTML = '<button type="button" class="btn btn-danger" onclick="deleteRow(this)">Delete</button>';
-                document.getElementById("name").selectedIndex = "0";
-                document.getElementById("quantity").value = "";
-            }
-            function deleteRow(btn) {
-                var row = btn.parentNode.parentNode;
-                row.parentNode.removeChild(row);
-            }
         </script>
 </body>
 
